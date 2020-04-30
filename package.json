@@ -1,0 +1,65 @@
+{
+  "name": "fetch-write-webpack-plugin",
+  "version": "0.0.0-development",
+  "description": "Webpack plugin that would fetch the data source and write file on build time 🚀",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anzai9/fetch-write-webpack-plugin.git"
+  },
+  "scripts": {
+    "lint": "eslint '*/**/*.js' --quiet --fix",
+    "build": "babel lib/index.js --out-file dist/index.js",
+    "test:bundle": "npm run build && webpack --config ./webpack.config.test.js",
+    "semantic-release": "semantic-release",
+    "test": "echo skip"
+  },
+  "keywords": [
+    "webpack",
+    "node-fetch",
+    "json",
+    "plugin"
+  ],
+  "author": "Chien-An Wang <jiananwang1209@gamil.com>",
+  "license": "ISC",
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "fs-extra": "^9.0.0",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.5",
+    "@babel/plugin-transform-regenerator": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "semantic-release": "^17.0.7"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js}": [
+      "prettier --write",
+      "eslint . --fix",
+      "git add"
+    ]
+  }
+}
