@@ -11,13 +11,18 @@
     "url": "https://github.com/anzai9/fetch-write-webpack-plugin.git"
   },
   "scripts": {
-    "lint": "eslint '*/**/*.js' --quiet --fix",
-    "clean": "del-cli",
-    "build": "npm run clean -- dist && cross-env NODE_ENV=production babel lib -d dist --copy-files --verbose",
     "build:sample": "npm run clean -- static && npm run build && webpack --config ./example/webpack.config.example.js",
+    "build": "npm run clean -- dist && cross-env NODE_ENV=production babel lib -d dist --copy-files --verbose",
+    "lint:prettier": "prettier --write",
+    "lint:eslint": "eslint '*/**/*.js' --quiet --fix --cache",
+    "lint": "npm-run-all -l -p \"lint:**\"",
+    "security": "npm audit",
+    "clean": "del-cli",
     "semantic-release": "semantic-release",
-    "test": "echo skip",
-    "security": "npm audit"
+    "test:only": "cross-env NODE_ENV=test jest",
+    "test:watch": "npm run test:only -- --watch",
+    "test:coverage": "npm run test:only -- --collectCoverageFrom=\"lib/**/*.js\" --coverage",
+    "test": "npm run test:coverage"
   },
   "keywords": [
     "webpack",
@@ -56,6 +61,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "html-webpack-plugin": "^4.3.0",
     "husky": "^3.1.0",
+    "jest": "^25.5.4",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
     "semantic-release": "^17.0.7",
@@ -69,8 +75,7 @@
   },
   "lint-staged": {
     "*/**.js": [
-      "prettier --write",
-      "eslint . --fix",
+      "npm run lint",
       "git add"
     ]
   }
