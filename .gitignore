@@ -1,11 +1,13 @@
 .npmrc
+.eslintcache
 
 /node_modules
 **/dist
-static
-
+/static
+/coverage
 
 *.log
 *.cache
 
 .DS_Store
+.vscode
