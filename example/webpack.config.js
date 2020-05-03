@@ -24,7 +24,7 @@ module.exports = {
             'Content-Type': 'application/json'
           }
         },
-        to: {
+        output: {
           name: 'style.json',
           basePath: './static/bundle'
         }
@@ -37,7 +37,7 @@ module.exports = {
             'Content-Type': 'application/json'
           }
         },
-        to: {
+        output: {
           name: 'name',
           ext: 'json'
         }
