@@ -84,10 +84,6 @@ jobs:
 
     needs: test
 
-    env:
-      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -111,4 +107,7 @@ jobs:
         run: npm run build --if-presents
 
       - name: Publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release
