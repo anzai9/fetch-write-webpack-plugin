@@ -38,7 +38,8 @@ jobs:
         run: npm run lint
 
       - name: Security audit
-        run: npm run security
+        if: github.event_name == 'pull_request'
+        run: npm run security -- --audit-level=moderate
 
   test:
     name: Test - ${{ matrix.os }} - Node v${{ matrix.node-version }} Webpack ${{ matrix.webpack-version }}
