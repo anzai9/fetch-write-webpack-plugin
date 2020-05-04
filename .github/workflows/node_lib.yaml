@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Git Checkout
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Use Node.js ${{ env.node-version }}
         uses: actions/setup-node@v1
@@ -38,7 +38,8 @@ jobs:
         run: npm run lint
 
       - name: Security audit
-        run: npm run security
+        if: github.event_name == 'pull_request'
+        run: npm run security -- --audit-level=moderate
 
   test:
     name: Test - ${{ matrix.os }} - Node v${{ matrix.node-version }} Webpack ${{ matrix.webpack-version }}
@@ -72,7 +73,7 @@ jobs:
         if: matrix.os == 'windows-latest'
         run: npm i -g npm
 
-      - name: Install webpack ${{ matrix.webpack-version }}
+      - name: Install webpack ${{ matrix.webpack-version }} version
         run: npm i webpack@${{ matrix.webpack-version }}
 
       - name: Run tests for webpack version ${{ matrix.webpack-version }}

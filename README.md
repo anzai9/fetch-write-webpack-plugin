@@ -91,15 +91,15 @@ module.exports = {
 
 ### Fetch Options
 
-| Name       | Type      | Default     | Description                                        |              |
-| ---------- | --------- | ----------- | -------------------------------------------------- | ------------ |
-| url        | `string`  | `undefined` | data source's url                                  |              |
-| method     | \`{GET    | POST}\`     | `GET`                                              | fetch method |
-| headers    | `any`     | `undefined` | http headers                                       |              |
-| body       | `any`     | `undefined` | http body                                          |              |
-| retryOn    | `boolean` | `false`     | determine the retry fetch whether turn on or not   |              |
-| retries    | `number`  | `3`         | retry count only work while the retry on is `true` |              |
-| retryDelay | `number`  | `1000`      | retry delay only work while the retry on is `true` |              |
+| Name       | Type      | Default     | Description                                        |     |
+| ---------- | --------- | ----------- | -------------------------------------------------- | --- |
+| url        | `string`  | `undefined` | data source's url                                  |     |
+| method     | `string`  | `GET`       | fetch method                                       |     |
+| headers    | `any`     | `undefined` | http headers                                       |     |
+| body       | `any`     | `undefined` | http body                                          |     |
+| retryOn    | `boolean` | `false`     | determine the retry fetch whether turn on or not   |     |
+| retries    | `number`  | `3`         | retry count only work while the retry on is `true` |     |
+| retryDelay | `number`  | `1000`      | retry delay only work while the retry on is `true` |     |
 
 ### Output Options
 
@@ -113,7 +113,7 @@ module.exports = {
 
 -   [ ] Add cache data while the the webpack dev-server hot reload
 -   [ ] Add force write featrue after emit hook and also compatible for the [`clean-webpack-plugin`](https://github.com/johnagan/clean-webpack-plugin)
--   [ ] Compatible the writing file feature on [`webpack-dev-middleware`](https://github.com/webpack/webpack-dev-middleware) and [`webpack -dev-server`](https://github.com/webpack/webpack-dev-server) (TBD)
+-   [ ] Compatible the writing file feature on [`webpack-dev-middleware`](https://github.com/webpack/webpack-dev-middleware) and [`webpack-dev-server`](https://github.com/webpack/webpack-dev-server) (TBD)
 -   [ ] Make example to the sandbox testing
 
 ## Show your support
