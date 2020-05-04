@@ -109,6 +109,13 @@ module.exports = {
 | ext      | `string` | `undefined`           | file extension        |
 | basePath | `string` | `webapck output path` | output file base path |
 
+## Roadmap
+
+- [ ] Add cache data while the the webpack dev-server hot reload
+- [ ] Add force write featrue after emit hook and also compatible for the [`clean-webpack-plugin`](https://github.com/johnagan/clean-webpack-plugin)
+- [ ] Compatible the writing file feature on [`webpack-dev-middleware`](https://github.com/webpack/webpack-dev-middleware) and [`webpack -dev-server`](https://github.com/webpack/webpack-dev-server) (TBD)
+- [ ] Make example to the sandbox testing
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!
