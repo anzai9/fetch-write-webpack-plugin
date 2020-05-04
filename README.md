@@ -91,15 +91,15 @@ module.exports = {
 
 ### Fetch Options
 
-| Name       | Type      | Default     | Description                                        |              |
-| ---------- | --------- | ----------- | -------------------------------------------------- | ------------ |
-| url        | `string`  | `undefined` | data source's url                                  |              |
-| method     | `{GET|POST}`     | `GET`                                              | fetch method |
-| headers    | `any`     | `undefined` | http headers                                       |              |
-| body       | `any`     | `undefined` | http body                                          |              |
-| retryOn    | `boolean` | `false`     | determine the retry fetch whether turn on or not   |              |
-| retries    | `number`  | `3`         | retry count only work while the retry on is `true` |              |
-| retryDelay | `number`  | `1000`      | retry delay only work while the retry on is `true` |              |
+| Name       | Type      | Default     | Description                                        |     |
+| ---------- | --------- | ----------- | -------------------------------------------------- | --- |
+| url        | `string`  | `undefined` | data source's url                                  |     |
+| method     | `string`  | `GET`       | fetch method                                       |     |
+| headers    | `any`     | `undefined` | http headers                                       |     |
+| body       | `any`     | `undefined` | http body                                          |     |
+| retryOn    | `boolean` | `false`     | determine the retry fetch whether turn on or not   |     |
+| retries    | `number`  | `3`         | retry count only work while the retry on is `true` |     |
+| retryDelay | `number`  | `1000`      | retry delay only work while the retry on is `true` |     |
 
 ### Output Options
 
