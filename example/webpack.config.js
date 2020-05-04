@@ -4,13 +4,17 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const FetchWritePlugin = require('../dist/cjs')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const ENTRY = path.resolve(__dirname, 'index.js')
+
 module.exports = {
   mode: 'development',
-  context: path.resolve(__dirname, 'example'),
-  entry: { simple: './index.js' },
+  entry: {
+    simple1: ENTRY,
+    simple2: ENTRY
+  },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'example/dist')
+    path: path.resolve(__dirname, 'dist')
   },
   plugins: [
     new webpack.ProgressPlugin(),
@@ -43,6 +47,8 @@ module.exports = {
         }
       }
     ]),
-    new HtmlWebpackPlugin({ template: './index.html' })
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'index.html')
+    })
   ]
 }
