@@ -33,7 +33,7 @@
   "author": "Chien-An Wang <jiananwang1209@gamil.com>",
   "license": "MIT",
   "dependencies": {
-    "fs-extra": "^9.0.0",
+    "fs-extra": "^10.0.0",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
